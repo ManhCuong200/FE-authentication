@@ -15,7 +15,6 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="profile" element={<ProfilePage />} />
         </Route>
-
       </Routes>
     </BrowserRouter>
   );

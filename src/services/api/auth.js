@@ -19,3 +19,14 @@ export const getProfile = async () => {
 export const logout = async () => {
     return await api.post("/auth/logout");
 }
+
+export const getUsers = async () => {
+  return await api.get("/auth/getUsers");  
+};
+export const deleteUser = async (id) => {
+    return await api.delete(`/auth/deleteUser/${id}`);
+}
+
+export const updateUser = async (id, data) => {
+    return await api.put(`/auth/updateUser/${id}`, data);
+}

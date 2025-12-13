@@ -3,7 +3,7 @@ import { LayoutDashboard, Users, Settings, BarChart3, User, HelpCircle } from "l
 
 export default function Sidebar() {
   const menu = [
-    { name: "Dashboard", path: "/", icon: LayoutDashboard, end: true },
+    { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard, end: true },
     { name: "Users", path: "/users", icon: Users },
     { name: "Settings", path: "/settings", icon: Settings },
     { name: "Reports", path: "/reports", icon: BarChart3 },

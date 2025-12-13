@@ -115,12 +115,13 @@ const RegisterForm = ({
               Đã có tài khoản? Đăng nhập
             </Link>
             <button
+              disabled={loading}
               type="submit"
               className="bg-blue-600 text-white px-8 py-2.5 rounded-lg font-medium hover:bg-blue-700 transition-colors focus:ring-4 focus:ring-blue-200 flex items-center gap-2"
             >
               {loading ? (
                 <div className="flex items-center justify-center gap-2">
-                    <Spinner  /> Signing Up...
+                  <Spinner /> Signing Up...
                 </div>
               ) : (
                 "Đăng ký"

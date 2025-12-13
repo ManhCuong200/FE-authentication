@@ -70,6 +70,7 @@ const LoginForm = ({ handleLogin, loading, email, password, setEmail, setPasswor
                     </div>
 
                     <button
+                        disabled={loading}
                         type="submit"
                         className="w-full bg-blue-600 text-white py-2.5 rounded-lg font-medium hover:bg-blue-700 transition-colors focus:ring-4 focus:ring-blue-200"
                     >

@@ -1,6 +1,6 @@
 import LoginForm from "../../components/loginForm";
 import { useState } from "react";
-import { login } from "../../services/api/auth";
+import { login, getProfile } from "../../services/api/auth";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
@@ -19,9 +19,14 @@ const LoginPage = () => {
     try {
       setLoading(true);
       const res = await login({ email, password });
-      const accessToken = res.data?.data?.tokens?.accessToken;
+      const accessToken = res.data?.data?.accessToken;
       if (accessToken) {
         localStorage.setItem("accessToken", accessToken);
+        const userRes = await getProfile();
+        if (userRes?.data?.data) {
+          localStorage.setItem("user", JSON.stringify(userRes.data.data));
+          localStorage.setItem("role", userRes.data.data.role);
+        }
       }
       toast.success("Đăng nhập thành công!");
       navigate("/profile");
